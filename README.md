@@ -29,4 +29,5 @@ If you are developing a production application, we recommend updating the config
 - Aliasing paths in Vite projects w/ TypeScript
 - Add sass, component: GlobalStyles
 - Route config
+- Config layout
 Side note - make sure to `npm install -D @types/node` in order to avoid issues with importing `path` and using `__dirname`
