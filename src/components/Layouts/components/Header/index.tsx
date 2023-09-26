@@ -9,6 +9,9 @@ import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
 
 import images from "@/assets/images";
+import AccountItem from "@/components/AccountItem";
+import Button from "@/components/Button";
+import { PopperWrapper } from "@/components/Popper";
 import styles from "./Header.module.scss";
 
 const cx = classNames.bind(styles);
@@ -23,14 +26,25 @@ const Header = () => {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <img src={images.logo} className={cx("logo")} alt='logo' />
+        <img className={cx("logo")} src={images.logo} alt='logo' />
 
         <Tippy
           interactive
           visible={searchResult.length > 0}
           render={(attrs) => (
             <div className={cx("search-result")} tabIndex={-1} {...attrs}>
-              Result
+              <PopperWrapper>
+                <h4 className={cx("search-title")}>Tài khoản</h4>
+
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+              </PopperWrapper>
             </div>
           )}
         >
@@ -50,7 +64,7 @@ const Header = () => {
         </Tippy>
 
         <div className={cx("actions")}>
-          <button>Log in</button>
+          <Button primary>Log in</Button>
         </div>
       </div>
     </header>
