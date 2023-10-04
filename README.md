@@ -30,5 +30,5 @@ If you are developing a production application, we recommend updating the config
 - Add sass, component: GlobalStyles
 - Config route, layout
 - Header ui
-- Base button
+- Base button, menu items
 Side note - make sure to `npm install -D @types/node` in order to avoid issues with importing `path` and using `__dirname`
