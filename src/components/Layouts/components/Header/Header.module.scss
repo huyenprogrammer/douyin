@@ -33,11 +33,11 @@
 
   &:hover,
   &:focus-within {
-    border-color: #fff;
+    border-color: var(--white);
   }
 
   input {
-    color: #fff;
+    color: var(--white);
     background: transparent;
     padding: 0 12px;
     flex: 1;
@@ -49,8 +49,8 @@
   }
 
   input:not(:placeholder-shown) ~ .search-btn {
-    background-color: #fff;
-    color: #161823;
+    background-color: var(--white);
+    color: var(--dark-blue);
 
     &:active {
       background-color: #e6e6e6;
@@ -60,7 +60,7 @@
 
 .clear {
   background: transparent;
-  color: #fff;
+  color: var(--white);
 }
 
 .clear,
@@ -74,13 +74,13 @@
 .search-btn {
   width: 52px;
   background: transparent;
-  color: #fff;
+  color: var(--white);
   border-top-right-radius: 9px;
   border-bottom-right-radius: 9px;
 
   &:hover {
-    background-color: #fff;
-    color: #161823;
+    background-color: var(--white);
+    color: var(--dark-blue);
   }
 
   &:active {

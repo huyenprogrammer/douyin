@@ -11,14 +11,34 @@ interface IProps {
   children: ReactNode;
   href?: string;
   to?: string;
+  outline?: boolean;
+  size?: string;
+  text?: boolean;
+  disabled?: boolean;
+  onClick?: () => void;
+  rounded?: boolean;
+  className?: string;
+  leftIcon?: React.ReactElement;
+  rightIcon?: React.ReactElement;
 }
 
-const Button: React.FC<IProps> = ({ primary, children, ...props }) => {
+const Button: React.FC<IProps> = ({
+  primary,
+  children,
+  outline,
+  size = "medium",
+  text,
+  rounded,
+  className = "",
+  leftIcon,
+  rightIcon,
+  ...props
+}) => {
   let Component:
     | string
     | ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> =
     "button";
-  const { href, to } = props;
+  const { href, to, disabled } = props;
 
   if (to) {
     Component = Link;
@@ -28,13 +48,20 @@ const Button: React.FC<IProps> = ({ primary, children, ...props }) => {
     Component = "a";
   }
 
-  const classes = cx("wrapper", {
+  const classes = cx("wrapper", size, {
     primary,
+    outline,
+    text,
+    disabled,
+    rounded,
+    [className]: className,
   });
 
   return (
     <Component className={classes} to={to ?? ""} {...props}>
+      {leftIcon && <span className='icon'>{leftIcon}</span>}
       <span>{children}</span>
+      {rightIcon && <span className='icon'>{rightIcon}</span>}
     </Component>
   );
 };
