@@ -2,6 +2,8 @@
 
 :root {
   --primary: #fe2c55;
+  --white: #fff;
+  --dark-blue: #161823;
   --header-height: 60px;
   --content-max-width-destop: 1150px;
 }
@@ -21,8 +23,8 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
-  background-color: #161823;
-  color: #fff;
+  background-color: var(--dark-blue);
+  color: var(--white);
 }
 
 button,
@@ -37,6 +39,6 @@ button {
 }
 
 a[href] {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
 }
