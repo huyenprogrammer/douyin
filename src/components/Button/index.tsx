@@ -59,9 +59,9 @@ const Button: React.FC<IProps> = ({
 
   return (
     <Component className={classes} to={to ?? ""} {...props}>
-      {leftIcon && <span className='icon'>{leftIcon}</span>}
+      {leftIcon && <span className={cx("icon")}>{leftIcon}</span>}
       <span>{children}</span>
-      {rightIcon && <span className='icon'>{rightIcon}</span>}
+      {rightIcon && <span className={cx("icon")}>{rightIcon}</span>}
     </Component>
   );
 };
